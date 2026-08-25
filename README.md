@@ -8,7 +8,7 @@ Formato: laboratorio guiado, autocontenido, de principio a fin
 
 ---
 
-## Qué es esto
+## Qué es esto ?
 
 Un laboratorio de dos horas para gente que ya trabaja con Git y GitHub todos los
 días (ramas, commits, pull requests) pero que nunca ha escrito un workflow de
