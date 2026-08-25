@@ -18,7 +18,7 @@ permissions: {}
 jobs:
   saludo:
     name: Saludo
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latests
     steps:
       - name: Imprimir un mensaje
         run: echo "Hola desde GitHub Actions"
@@ -33,6 +33,7 @@ jobs:
 
       - name: Escribir en el resumen del run
         run: |
+          prueba argumento
           echo "### Mi primer workflow" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "Ejecutado por **$GITHUB_ACTOR** sobre la rama \`$GITHUB_REF_NAME\`." >> "$GITHUB_STEP_SUMMARY"

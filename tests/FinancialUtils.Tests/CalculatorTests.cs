@@ -151,7 +151,7 @@ public class CalculatorTests
         // NPV = -1000 + 400/1.1 + 400/1.21 + 400/1.331 ≈ -0.64
         var cashFlows = new[] { -1000m, 400m, 400m, 400m };
         var result = Calculator.NetPresentValue(0.10m, cashFlows);
-        Assert.Equal(-0.64m, result);
+        Assert.Equal(-5.26m, result);
     }
 
     [Fact]
