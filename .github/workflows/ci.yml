@@ -6,7 +6,7 @@
 # restores. Partir jobs se justifica cuando ganas paralelismo o cuando
 # necesitas condiciones distintas, no por estética.
 
-name: 01 - CI
+name: 01 - CI-oficial
 
 on:
   push:
