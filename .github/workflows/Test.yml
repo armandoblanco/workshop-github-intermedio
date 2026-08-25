@@ -1,0 +1,38 @@
+name: Test
+ 
+on:
+  push:
+    branches:
+      - main
+      - 'feature/**'
+      - 'fix/**'
+  pull_request:
+    branches:
+      - main
+ 
+env:
+  DOTNET_VERSION: '9.0.x'
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+ 
+jobs:
+  format:
+    name: Format check
+    runs-on: ubuntu-latest
+    outputs:
+      dotnet-version: ${{ steps.setup-dotnet.outputs.dotnet-version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+ 
+      - name: Setup .NET
+        id: setup-dotnet
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+ 
+      - name: Restore dependencias
+        run: dotnet restore
+ 
+      - name: Verificar formato de código
+        run: dotnet format --verify-no-changes --verbosity diagnostic

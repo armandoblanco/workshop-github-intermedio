@@ -1,0 +1,40 @@
+# CODEOWNERS
+#
+# Define quién debe revisar cambios en partes específicas del repositorio.
+# GitHub solicita automáticamente la revisión de los owners cuando un PR
+# modifica archivos que coinciden con algún patrón.
+#
+# Sintaxis: patrón   @usuario-o-equipo
+#
+# Las reglas se evalúan de arriba hacia abajo.
+# La última regla que coincida con un archivo gana.
+# Los patrones siguen la misma sintaxis que .gitignore.
+
+# --- Owner global ---
+# Aplica a todo lo que no tenga una regla más específica abajo.
+*                               @TU_USUARIO
+
+# --- Librería principal ---
+# Cualquier cambio en el código fuente requiere revisión de los maintainers.
+/src/                           @TU_USUARIO
+
+# --- Tests ---
+# Los tests pueden revisarlos los mismos developers, no solo maintainers.
+# En un equipo real aquí irían @equipo/developers o usuarios individuales.
+/tests/                         @TU_USUARIO
+
+# --- Workflows de CI/CD ---
+# Los cambios en pipelines tienen un impacto alto: pueden exponer secrets,
+# modificar qué checks son requeridos, o cambiar tiempos de build.
+# Requieren revisión explícita de quien administra la infraestructura.
+/.github/workflows/             @TU_USUARIO
+
+# --- Configuración de seguridad y políticas ---
+# CODEOWNERS mismo, editorconfig y configuración del repo.
+/.github/CODEOWNERS             @TU_USUARIO
+/.editorconfig                  @TU_USUARIO
+
+# --- Documentación ---
+# El README puede actualizarlo cualquier contributor.
+# Si quisieras restricción, agregarías un owner específico aquí.
+*.md                            @TU_USUARIO
